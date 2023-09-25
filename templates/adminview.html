@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="/static/admin.js"></script>
+    <title>Admin</title>
+
+</head>
+<body>
+    <h1>Page Admin</h1>
+    <form id="form">
+        <label for="difficulte">Filtrer par difficulté : </label>
+        <select name="level" id="level">
+            <option value="all">Toutes</option>
+            {% for difficulte in levels %}
+            <option value="{{ difficulte.get_nom() }}">{{ difficulte.get_nom() }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label for="titre">Rechercher par titre : </label>
+        <input type="text" name="titre" id="titre">
+        <br>
+        <br>
+        <input type="submit" value="Rechercher">
+    </form>
+    <p id="nbResultats"></p>
+    <a href="adminview/create">Ajouter un film</a>
+    <a href="/">Revenir au site</a>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Titre du film</th>
+                <th>Url de l'Image</th>
+                <th>Description</th>
+                <th>Difficulté</th>
+            </tr>
+        </thead> 
+        <tbody id="films">
+        </tbody>
+    </table>
+</body>
+</html>

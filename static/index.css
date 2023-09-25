@@ -1,0 +1,65 @@
+
+/* header{
+    background-color: var(--secondary-color);
+    height: 50px;
+    position: absolute;
+    top: 0; 
+    width: 100%;
+} */
+
+
+
+.title {
+    text-align: center;
+    font-family: "Manrope-Bold";
+    font-size: var(--font-sizeh2);
+    min-height: 800px;
+
+    background-image: url(img/cine.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+
+}
+
+
+.description {
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
+.title .btn {
+    margin-top: 60%;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 300px;
+    margin: 0 auto; 
+    text-align: center;
+    border: 1px solid var(--txt-color);
+  }
+thead{
+    background-color: var(--secondary-color);
+    border: 1px solid var(--txt-color); 
+}
+th, td {
+    width: 150px;
+}
+th {
+    font-family: 'Manrope-Bold';
+}
+tr{
+    height: 30px;
+}
+tbody tr:hover {
+    background-color: var(--tertiary-color);
+}
+  
+
+
+footer {
+    margin-top: 50px;
+}

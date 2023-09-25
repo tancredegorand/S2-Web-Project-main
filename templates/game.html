@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/game.css">
+    <script src="/static/script.js"></script> 
+    <title>Game</title>
+</head>
+<body>
+    <section class="corpus" id="corpus">
+        <section class="label">
+            <div>
+                <!--INITIALISATION DES VARIABLES JS-->
+                <input class="nickname" id="nickname" type="text" name="nom" placeholder="Joueur 1">
+                {% block content %}
+                <select name="level" id="level" class="level">
+                        <!--BOUCLE DES OPTIONS NIVEAUX-->
+                        {% for difficulte in levels %}
+                        <option value="{{ difficulte.get_nom() }}">{{ difficulte.get_nom() }}</option>
+                        {% endfor %}
+                </select>
+                <button  type="submit" id="go" class="go" >GO</button>
+                {% endblock %}
+            </div>
+        </section>
+    </section>
+    <section class="small-screen">
+        <h1>FilmFocus</h1>
+        <h2>Votre écran est trop petit ! </h2>
+        <img src="/static/img/arrow.svg" alt="">
+    </section>
+    <section class="game" id="game">
+        <div class="info-left">
+           <div class="info-jeu">
+            <div class="info-block">
+                <div class="info-time">
+                    <p id="time">60</p>
+                </div>
+            </div>
+            <div class="info-block">
+                <div class="info-score">
+                    <!--SCORE EN LIVE-->
+                    <p id="score">SCORE : 0</p>
+                </div>
+            </div>
+            <div class="info-block">
+                <div class="info-name">
+                     <!--NOM DU JOUEUR-->
+                    <p id="displayUsername"></p>
+                </div>
+            </div>
+            <div class="info-block">
+                <div class="info-level">
+                     <!--LEVEL  -->
+                    <p id="displaylevel">Facile</p>
+                </div>
+            </div>
+           </div>
+    
+        </div>
+        <div class="screen">
+            <div class="display">
+                <!--IMAGE-->
+                <img src="/static/img/affiche_test.jpg" alt="" id="afficheImg">
+            </div>
+            <div class="inputs">
+                <form id="form" action="">
+                    <input class="try" type="text" name="text" id="try">
+                    <input class="envoyer" type="submit" value="ENVOYER"> 
+                    <!--BTN SUIVANT ?-->      
+                </form>
+            </div>  
+        </div>
+        <div class="info-right">
+            <h2 class="historique-title">HISTORIQUE</h2>
+            <div class="historique">
+                <ul id="ulHistorique">
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="endGame" id="endGame">
+        <div>
+            <h2>FIN DE LA PARTIE</h2>
+            <p class="endInfo" id="displayDescription"></p>
+            <p class="endInfo" id="displayEndJoueur"></p> 
+            <p class="endInfo" id="displayEndScore">2000</p> 
+            <p class="endInfo" id="displayEndLevel"></p>
+            <di class="endBtn">
+                <a href="/"><button>MENU</button></a>
+                <a href="/game"><button>JOUER</button></a>
+            </div>
+ 
+        </div>
+    </section>
+</body>
+</html>
+

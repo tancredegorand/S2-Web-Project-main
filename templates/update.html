@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="/static/update.js"></script>
+    <script defer src="/static/delete.js"></script>
+    <title>Edition</title>
+</head>
+<body>  
+    <form id="modifyForm" action="">
+        <label for="id">Id du film</label>
+        <input type="text" name="id" id="id" value="{{film.get_id_film()}}" readonly>
+
+        <label for="titre">Titre du film</label>
+        <input type="text" name="nom" id="nom" value="{{film.get_nom()}}">
+
+        <label for="image">Url de l'image</label>
+        <input type="text" name="image" id="image" value="{{film.get_image()}}">
+
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" value="{{film.get_description()}}">
+
+        <label for="difficulte">Difficulté</label>
+        <input type="text" name="difficulte" id="difficulte" value="{{film.get_difficulte()}}">
+
+        <input type="submit" value="Modifier">
+    </form>
+</body>
+
+    <form id="deleteForm" action="">
+        <label for="id">Id du film</label>
+        <input type="text" name="id" id="id" value="{{film.get_id_film()}}" readonly>
+
+        <input type="submit" value="Supprimer">
+</html>

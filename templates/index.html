@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/style.css">
+
+    <title>Filmfocus</title>
+</head>
+<body>
+    <section class="corpus">
+        <section class="title">
+            <h1>Filmfocus</h1>
+            <p>Devenez le maître du cinéma avec FilmFocus !</p>
+            <a href="/game"><p class="btn">JOUER</p></a>    
+        </section>
+        <section class="description">
+            <p>Filmfocus... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum voluptas ducimus dolore earum culpa. Illum soluta tenetur optio corrupti debitis id facere, nesciunt, culpa eius esse laborum vel cumque cum!</p>
+        </section>
+        <section class="score">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pseudo</th>
+                        <th>Score</th>
+                        <!-- <th>Difficulté</th> -->
+                    </tr>
+                </thead> 
+                <tbody>
+                    <!--BOUCLE TABLEAU TOP 10 SCORE-->
+                    {% for player in leaderboard %}
+                    <tr>
+                        <td>{{player.get_nom()}}</td>
+                        <td>{{player.get_score()}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </section>
+    <section class="small-screen">
+        <h1>FilmFocus</h1>
+        <h2>Votre écran est trop petit ! </h2>
+        <img src="/static/img/arrow.svg" alt="">
+    </section>
+    <footer>
+        <ul>
+            <li>à propos</li>
+            <li>mentions légales</li>
+            <li><a href="/adminview">admin</a></li>
+        </ul>
+    </footer>
+    </body>
+</html>
+
